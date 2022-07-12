@@ -12,19 +12,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Avatar from '@mui/material/Avatar';
-
-
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+import Link from '@mui/material/Link';
 
 export default function Users() {
     const [items, setItems] = useState([]);
@@ -52,7 +40,9 @@ export default function Users() {
                 </Typography>
             </Box>
             <Box>
+            <Link href="create">
             <Button variant="contained">Create</Button>
+            </Link>
             </Box>
         </Box>
 
@@ -79,7 +69,9 @@ export default function Users() {
                         {row.id}
                     </TableCell>
                     <TableCell align="center">
-                    <Avatar alt={row.username} src={row.avatar} /></TableCell>
+                        <Box display="flex" justifyContent="center">
+                    <Avatar alt={row.username} src={row.avatar} /></Box>
+                    </TableCell>
                     <TableCell align="center">{row.fname}</TableCell>
                     <TableCell align="center">{row.lname}</TableCell>
                     <TableCell align="center">{row.username}</TableCell>
