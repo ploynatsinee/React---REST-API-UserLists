@@ -6,6 +6,7 @@ import { Button, DialogContentText, Grid, TextField, Typography } from '@mui/mat
 export default function UserCreate() {
 
   const handleSubmit = event => {
+    event.preventDefault();
     var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
